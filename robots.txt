@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /private
 
-Sitemap: https://netkomdev.com/sitemap.xml
+Sitemap: https://netkom-dev.vercel.app/sitemap.xml
