@@ -295,7 +295,8 @@ h6 {
 
 /* Features (Hard Selling) */
 .features {
-    padding: 60px 0;
+    padding: 100px 0;
+    /* Standardized to match .section */
     margin-top: -60px;
     position: relative;
     z-index: 10;
@@ -627,8 +628,8 @@ h6 {
     /* Fix Features Overlap on Mobile */
     .features {
         margin-top: 0;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
     /* Adjust spacing for sections on mobile */
