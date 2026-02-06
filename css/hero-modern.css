@@ -251,21 +251,92 @@
 
     .hero-visual {
         height: 350px;
+        margin-top: 20px;
     }
 
     .web-mockup {
-        width: 80%;
+        width: 70%;
         transform: none;
+        /* Flatten 3D effect for simpler mobile view */
         position: relative;
         top: 0;
         right: 0;
+        margin: 0 auto;
     }
 
     .mobile-mockup {
-        width: 120px;
-        left: 50%;
-        bottom: -30px;
+        width: 100px;
+        left: 80%;
+        /* Position to the right side */
+        bottom: -20px;
         transform: translateX(-50%);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 120px;
+        /* More space for fixed header */
+        align-items: flex-start;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+        /* Smaller font */
+        margin-bottom: 15px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* Adjust Promo Box for Mobile */
+    .promo-box {
+        padding: 15px 20px;
+        margin-bottom: 25px;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .promo-content {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .amount {
+        font-size: 2.5rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Visual adjustments for small screens */
+    .hero-visual {
+        height: 250px;
+        /* Reduced height */
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
+    .web-mockup {
+        width: 85%;
+    }
+
+    .mobile-mockup {
+        width: 90px;
+        left: 85%;
+        bottom: -15px;
     }
 
     /* Reset animation for mobile simplicity */
