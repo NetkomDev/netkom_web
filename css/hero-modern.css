@@ -243,40 +243,50 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        order: 1;
+        /* Explicit order */
+    }
+
+    .hero-visual {
+        order: 2;
+        /* Explicit order */
+        height: 350px;
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+        /* Contain absolute children */
     }
 
     .hero-btns {
         justify-content: center;
     }
 
-    .hero-visual {
-        height: 350px;
-        width: 100%;
-        margin-top: 20px;
-    }
-
     .web-mockup {
         width: 60%;
         max-width: 400px;
         transform: none;
-        /* Flatten 3D effect */
+        /* Flatten */
         position: relative;
-        top: 0;
-        right: 0;
-        margin: 0 auto;
+        /* Change from absolute to relative to flow naturally */
+        top: auto;
+        right: auto;
         left: auto;
+        margin: 0 auto;
+        display: block;
     }
 
     .mobile-mockup {
         width: 100px;
         position: absolute;
         left: 50%;
-        /* Center relative to container */
-        margin-left: 80px;
-        /* Offset from center */
-        bottom: -20px;
+        margin-left: 100px;
+        /* Push to right of center */
+        bottom: 0px;
+        right: auto;
+        top: auto;
         transform: none;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        z-index: 5;
     }
 }
 
