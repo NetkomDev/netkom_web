@@ -1,0 +1,16 @@
+{
+  "name": "netkom-dev-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for NETKOM Dev",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "NETKOM Dev",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
