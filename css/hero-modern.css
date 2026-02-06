@@ -351,11 +351,13 @@
 
     /* Visual adjustments for small screens */
     .hero-visual {
-        height: 220px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        overflow: visible;
-        /* Allow overlap */
+        display: none;
+        /* Hide hero image on mobile as requested */
+    }
+
+    .hero {
+        padding-bottom: 40px;
+        /* Adjust padding since image is gone */
     }
 
     .web-mockup {
