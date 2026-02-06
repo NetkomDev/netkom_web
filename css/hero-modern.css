@@ -302,6 +302,8 @@
         font-size: 2rem;
         margin-bottom: 12px;
         line-height: 1.2;
+        padding: 0 10px;
+        /* Match paragraph padding */
     }
 
     .hero-text p {
