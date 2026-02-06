@@ -607,15 +607,6 @@ h6 {
         transition: 0.4s;
     }
 
-    /* Hamburger Animation */
-    .menu-toggle.is-active .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .menu-toggle.is-active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
     .menu-toggle.is-active .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
@@ -631,5 +622,26 @@ h6 {
 
     .social-links {
         justify-content: center;
+    }
+
+    /* Fix Features Overlap on Mobile */
+    .features {
+        margin-top: 0;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    /* Adjust spacing for sections on mobile */
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+        /* Reduce gap */
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
     }
 }
