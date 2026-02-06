@@ -302,14 +302,15 @@
         font-size: 2rem;
         margin-bottom: 12px;
         line-height: 1.2;
-        padding: 0 10px;
-        /* Match paragraph padding */
+        padding: 0;
+        width: 100%;
     }
 
     .hero-text p {
         font-size: 0.95rem;
         margin-bottom: 20px;
-        padding: 0 10px;
+        padding: 0;
+        width: 100%;
     }
 
     /* Promo Box Fix */
