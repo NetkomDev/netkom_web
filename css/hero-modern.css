@@ -251,69 +251,87 @@
 
     .hero-visual {
         height: 350px;
+        width: 100%;
         margin-top: 20px;
     }
 
     .web-mockup {
-        width: 70%;
+        width: 60%;
+        max-width: 400px;
         transform: none;
-        /* Flatten 3D effect for simpler mobile view */
+        /* Flatten 3D effect */
         position: relative;
         top: 0;
         right: 0;
         margin: 0 auto;
+        left: auto;
     }
 
     .mobile-mockup {
         width: 100px;
-        left: 80%;
-        /* Position to the right side */
+        position: absolute;
+        left: 50%;
+        /* Center relative to container */
+        margin-left: 80px;
+        /* Offset from center */
         bottom: -20px;
-        transform: translateX(-50%);
+        transform: none;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 }
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 120px;
-        /* More space for fixed header */
+        padding-top: 100px;
         align-items: flex-start;
+        min-height: auto;
+        padding-bottom: 60px;
     }
 
     .hero-text h1 {
-        font-size: 2.2rem;
-        /* Smaller font */
-        margin-bottom: 15px;
+        font-size: 2rem;
+        margin-bottom: 12px;
+        line-height: 1.2;
     }
 
     .hero-text p {
-        font-size: 1rem;
-        margin-bottom: 25px;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        padding: 0 10px;
     }
 
-    /* Adjust Promo Box for Mobile */
+    /* Promo Box Fix */
     .promo-box {
-        padding: 15px 20px;
+        padding: 15px;
         margin-bottom: 25px;
         width: 100%;
-        max-width: 350px;
+        max-width: 320px;
+        /* Ensure it fits on small screens (320px+) */
+        box-sizing: border-box;
     }
 
     .promo-content {
-        flex-direction: column;
-        gap: 5px;
-        align-items: center;
+        flex-direction: row;
+        /* Keep row but wrap if needed */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        align-items: baseline;
     }
 
     .amount {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .unit {
+        font-size: 1.2rem;
     }
 
     .hero-btns {
         flex-direction: column;
         width: 100%;
         gap: 12px;
+        padding: 0 20px;
     }
 
     .btn {
@@ -323,20 +341,27 @@
 
     /* Visual adjustments for small screens */
     .hero-visual {
-        height: 250px;
-        /* Reduced height */
-        margin-top: 0;
-        margin-bottom: 40px;
+        height: 220px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        overflow: visible;
+        /* Allow overlap */
     }
 
     .web-mockup {
-        width: 85%;
+        width: 75%;
+        left: -20px;
+        /* Shift slightly left to make room for mobile */
+        margin: 0 auto;
     }
 
     .mobile-mockup {
-        width: 90px;
-        left: 85%;
-        bottom: -15px;
+        width: 80px;
+        left: auto;
+        right: 15%;
+        /* Position from right edge */
+        margin-left: 0;
+        bottom: -10px;
     }
 
     /* Reset animation for mobile simplicity */
