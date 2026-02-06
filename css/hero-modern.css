@@ -35,10 +35,20 @@
 }
 
 .hero-bg-overlay {
-    background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.12), transparent 60%),
-        radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.12), transparent 60%);
+    position: fixed;
+    /* Fixed to cover entire screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background:
+        radial-gradient(circle at 15% 55%, rgba(59, 130, 246, 0.15), transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.15), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.05), transparent 50%);
     animation: none;
-    /* Reset old animation */
+    z-index: -3;
+    /* Ensure it stays behind everything */
+    pointer-events: none;
 }
 
 /* Left Column: Text & CTA */
