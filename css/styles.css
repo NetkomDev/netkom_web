@@ -1,26 +1,27 @@
 :root {
-    /* Modern Palette */
+    /* Modern Palette - Rich & Premium */
     --primary-color: #3b82f6;
     --primary-glow: rgba(59, 130, 246, 0.5);
     --secondary-color: #8b5cf6;
-    --accent-color: #06b6d4;
+    --accent-color: #38bdf8;
+    /* Cyan for tech vibes */
 
     /* Backgrounds */
-    --bg-dark: #020617;
-    /* Deeper dark blue */
-    --bg-card: rgba(30, 41, 59, 0.7);
-    /* Translucent */
-    --bg-nav: rgba(2, 6, 23, 0.8);
+    --bg-dark: #0f172a;
+    /* Slate 900 - Richer Blue/Grey */
+    --bg-card: rgba(30, 41, 59, 0.6);
+    /* Lighter transparency */
+    --bg-nav: rgba(15, 23, 42, 0.85);
 
     /* Text */
-    --text-light: #f8fafc;
-    --text-dim: #94a3b8;
+    --text-light: #f1f5f9;
+    --text-dim: #cbd5e1;
+    /* Lighter grey for better readability */
 
     /* Effects */
     --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-    --glass-highlight: 1px solid rgba(255, 255, 255, 0.2);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --glass-highlight: 1px solid rgba(255, 255, 255, 0.15);
 
     /* Layout */
     --container-width: 1200px;
@@ -42,9 +43,12 @@ body {
     color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
+    /* Subtle unified gradient mesh */
     background-image:
-        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    background-attachment: fixed;
+    /* Parallax feel */
 }
 
 h1,
