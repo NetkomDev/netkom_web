@@ -66,11 +66,15 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#hero" class="nav-link">Beranda</a></li>
-                <li><a href="#about" class="nav-link">Tentang</a></li>
-                <li><a href="#services" class="nav-link">Layanan</a></li>
-                <li><a href="#portfolio" class="nav-link">Portofolio</a></li>
-                <li><a href="#contact" class="nav-link btn-cta-nav">Pesan Sekarang</a></li>
+                <li><a href="#hero" class="nav-link" data-i18n="nav_home">Beranda</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav_about">Tentang</a></li>
+                <li><a href="#services" class="nav-link" data-i18n="nav_services">Layanan</a></li>
+                <li><a href="#portfolio" class="nav-link" data-i18n="nav_portfolio">Portofolio</a></li>
+                <li><a href="#contact" class="nav-link btn-cta-nav" data-i18n="nav_cta">Pesan Sekarang</a></li>
+                <li class="lang-toggle">
+                    <button data-lang="id" class="active" onclick="switchLang('id')">ID</button>
+                    <button data-lang="en" onclick="switchLang('en')">EN</button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -82,15 +86,17 @@
             <!-- Left Column: Text & CTA -->
             <div class="hero-text">
                 <div class="badge-pill role-badge">
-                    <span class="dot"></span> Open for Projects
+                    <span class="dot"></span> <span data-i18n="hero_badge">Open for Projects</span>
                 </div>
-                <h1 class="animate-up">Bangun Bisnis Digital <br> <span class="highlight">Lebih Profesional.</span></h1>
-                <p class="animate-up delay-1">Jasa pembuatan aplikasi Web & Mobile terpercaya. Solusi teknologi canggih
+                <h1 class="animate-up" data-i18n="hero_title">Bangun Bisnis Digital <br> <span class="highlight">Lebih
+                        Profesional.</span></h1>
+                <p class="animate-up delay-1" data-i18n="hero_desc">Jasa pembuatan aplikasi Web & Mobile terpercaya.
+                    Solusi teknologi canggih
                     dengan harga bersahabat untuk akselerasi bisnis Anda.</p>
 
                 <div class="promo-box animate-up delay-2">
                     <div class="promo-content">
-                        <span class="promo-label">Penawaran Spesial</span>
+                        <span class="promo-label" data-i18n="hero_promo_label">Penawaran Spesial</span>
                         <div class="promo-price">
                             <span class="currency">Rp</span>
                             <span class="amount">500</span>
@@ -102,10 +108,10 @@
 
                 <div class="hero-btns animate-up delay-3">
                     <a href="https://wa.me/6285694488510?text=Halo%20NETKOM%20Dev,%20saya%20tertarik%20bikin%20aplikasi%20promo%20500rb"
-                        class="btn btn-primary" target="_blank">
+                        class="btn btn-primary" target="_blank" data-i18n="hero_btn_promo">
                         <i class="fab fa-whatsapp"></i> Ambil Promo
                     </a>
-                    <a href="#portfolio" class="btn btn-secondary">Lihat Portofolio</a>
+                    <a href="#portfolio" class="btn btn-secondary" data-i18n="hero_btn_portfolio">Lihat Portofolio</a>
                 </div>
             </div>
 
@@ -128,30 +134,65 @@
         <div class="hero-bg-overlay"></div>
     </section>
 
+    <!-- Stats Counter -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+                    </div>
+                    <p class="stat-label" data-i18n="stat_projects">Project Selesai</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-number" data-target="2">0</span>
+                    </div>
+                    <p class="stat-label" data-i18n="stat_playstore">App di Play Store</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+                    </div>
+                    <p class="stat-label" data-i18n="stat_clients">Klien Puas</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
+                    </div>
+                    <p class="stat-label" data-i18n="stat_years">Tahun Pengalaman</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Us / Why Us -->
     <section id="about" class="section features">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Tentang Kami</h2>
-                <p>Mengapa Memilih NETKOM Dev?</p>
+                <h2 data-i18n="about_title">Tentang Kami</h2>
+                <p data-i18n="about_subtitle">Mengapa Memilih NETKOM Dev?</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <i class="fas fa-rocket"></i>
-                    <h3>Performa Tinggi</h3>
-                    <p>Jasa pembuatan aplikasi Android & iOS yang cepat, ringan, dan stabil. Kami optimalkan setiap
+                    <h3 data-i18n="about_perf_title">Performa Tinggi</h3>
+                    <p data-i18n="about_perf_desc">Jasa pembuatan aplikasi Android & iOS yang cepat, ringan, dan stabil.
+                        Kami optimalkan setiap
                         baris kode untuk pengalaman pengguna terbaik dan performa maksimal.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-layer-group"></i>
-                    <h3>Desain Modern</h3>
-                    <p>Jasa desain website dan UI/UX mobile app premium yang memanjakan mata. Tampilan profesional yang
+                    <h3 data-i18n="about_design_title">Desain Modern</h3>
+                    <p data-i18n="about_design_desc">Jasa desain website dan UI/UX mobile app premium yang memanjakan
+                        mata. Tampilan profesional yang
                         meningkatkan kredibilitas bisnis Anda di mata pelanggan.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Terpercaya</h3>
-                    <p>Partner IT consultant terpercaya untuk transformasi digital. Fokus kembangkan bisnis Anda,
+                    <h3 data-i18n="about_trust_title">Terpercaya</h3>
+                    <p data-i18n="about_trust_desc">Partner IT consultant terpercaya untuk transformasi digital. Fokus
+                        kembangkan bisnis Anda,
                         biarkan kami menangani teknis pembuatan sistem dan website.</p>
                 </div>
             </div>
@@ -162,26 +203,29 @@
     <section id="services" class="section services">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Layanan Kami</h2>
-                <p>Solusi Lengkap Jasa Pembuatan Website & Aplikasi</p>
+                <h2 data-i18n="svc_title">Layanan Kami</h2>
+                <p data-i18n="svc_subtitle">Solusi Lengkap Jasa Pembuatan Website & Aplikasi</p>
             </div>
             <div class="services-grid">
                 <div class="service-item">
                     <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Jasa Pembuatan Aplikasi</h3>
-                    <p>Ahli bikin aplikasi Android & iOS (Flutter/Native). Cocok untuk startup, ojek online,
+                    <h3 data-i18n="svc_app_title">Jasa Pembuatan Aplikasi</h3>
+                    <p data-i18n="svc_app_desc">Ahli bikin aplikasi Android & iOS (Flutter/Native). Cocok untuk startup,
+                        ojek online,
                         marketplace, hingga aplikasi kasir POS.</p>
                 </div>
                 <div class="service-item">
                     <div class="service-icon"><i class="fas fa-globe"></i></div>
-                    <h3>Jasa Pembuatan Website</h3>
-                    <p>Terima jasa buat website Company Profile, Toko Online (E-Commerce), Landing Page, hingga Web App
+                    <h3 data-i18n="svc_web_title">Jasa Pembuatan Website</h3>
+                    <p data-i18n="svc_web_desc">Terima jasa buat website Company Profile, Toko Online (E-Commerce),
+                        Landing Page, hingga Web App
                         custom yang SEO-friendly.</p>
                 </div>
                 <div class="service-item">
                     <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3>Sistem Web Custom</h3>
-                    <p>Pengembangan Sistem Informasi Manajemen, ERP, CRM, dan aplikasi berbasis web lainnya sesuai
+                    <h3 data-i18n="svc_sys_title">Sistem Web Custom</h3>
+                    <p data-i18n="svc_sys_desc">Pengembangan Sistem Informasi Manajemen, ERP, CRM, dan aplikasi berbasis
+                        web lainnya sesuai
                         kebutuhan unik bisnis Anda.</p>
                 </div>
             </div>
@@ -192,55 +236,81 @@
     <section id="portfolio" class="section portfolio">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Portofolio Unggulan</h2>
-                <p>Bukti Nyata Kualitas Kami</p>
+                <h2 data-i18n="port_title">Portofolio Unggulan</h2>
+                <p data-i18n="port_subtitle">Bukti Nyata Kualitas Kami</p>
             </div>
 
             <div class="portfolio-grid">
-                <!-- Project 1 -->
-                <div class="portfolio-card">
+                <!-- BERES.in -->
+                <a href="https://play.google.com/store/apps/details?id=com.jasapanggil.jasa_panggil" target="_blank"
+                    class="portfolio-card" style="text-decoration:none;color:inherit;">
                     <div class="portfolio-img">
-                        <img src="assets/images/portfolio_mobile.png" alt="Aplikasi Mobile E-Commerce"
-                            onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Mobile+App+Mockup'">
+                        <img src="assets/images/portfolio_beresin.png" alt="BERES.in - Aplikasi Jasa Panggil Rumahan">
                     </div>
                     <div class="portfolio-info">
-                        <h3>E-Commerce Super App</h3>
-                        <p>Aplikasi marketplace dengan fitur pembayaran lengkap dan pelacakan real-time.</p>
+                        <h3>BERES.in</h3>
+                        <p data-i18n="port_beresin_desc">Aplikasi jasa panggil rumahan terpercaya. Servis AC,
+                            kebersihan, dan tukang harian langsung
+                            dari genggaman Anda.</p>
                         <span class="badge">Mobile App</span>
+                        <span class="badge"
+                            style="background:rgba(16,185,129,0.15);color:#10b981;border-color:rgba(16,185,129,0.2);">
+                            <i class="fab fa-google-play" style="margin-right:4px;"></i> Play Store
+                        </span>
                     </div>
-                </div>
+                </a>
 
-                <!-- Project 2 -->
-                <div class="portfolio-card">
+                <!-- UMKM.id -->
+                <a href="https://play.google.com/store/apps/dev?id=7416954399110327683" target="_blank"
+                    class="portfolio-card" style="text-decoration:none;color:inherit;">
                     <div class="portfolio-img">
-                        <img src="assets/images/portfolio_web.png" alt="Dashboard Sistem Management"
-                            onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Web+Dashboard+Mockup'">
+                        <img src="assets/images/portfolio_umkmid.png" alt="UMKM.id - Aplikasi Manajemen UMKM">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Enterprise Dashboard</h3>
-                        <p>Sistem manajemen inventaris dan keuangan perusahaan berbasis web.</p>
+                        <h3>UMKM.id</h3>
+                        <p data-i18n="port_umkmid_desc">Aplikasi manajemen bisnis UMKM lengkap dengan pencatatan
+                            penjualan, pelacakan keuntungan, dan
+                            analisis bisnis real-time.</p>
+                        <span class="badge">Mobile App</span>
+                        <span class="badge"
+                            style="background:rgba(16,185,129,0.15);color:#10b981;border-color:rgba(16,185,129,0.2);">
+                            <i class="fab fa-google-play" style="margin-right:4px;"></i> Play Store
+                        </span>
+                    </div>
+                </a>
+
+                <!-- SIGAP -->
+                <a href="https://sigap-bone.vercel.app/" target="_blank" class="portfolio-card"
+                    style="text-decoration:none;color:inherit;">
+                    <div class="portfolio-img">
+                        <img src="assets/images/portfolio_sigap.png" alt="SIGAP - Sistem Keamanan Sekolah">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>SIGAP</h3>
+                        <p data-i18n="port_sigap_desc">Sistem pelaporan dan keamanan sekolah berbasis web. Dashboard
+                            admin, peta insiden, dan
+                            manajemen laporan terintegrasi.</p>
+                        <div
+                            style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;margin:10px 0;font-size:0.82rem;">
+                            <span
+                                style="color:#94a3b8;display:block;margin-bottom:4px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;">🔑
+                                Demo Login</span>
+                            <span style="color:#e2e8f0;">User: <strong>20100002</strong></span><br>
+                            <span style="color:#e2e8f0;">Pass: <strong>password123</strong></span>
+                        </div>
                         <span class="badge">Web System</span>
+                        <span class="badge"
+                            style="background:rgba(139,92,246,0.15);color:#a78bfa;border-color:rgba(139,92,246,0.2);">
+                            <i class="fas fa-desktop" style="margin-right:4px;"></i> Web App
+                        </span>
                     </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="portfolio-card">
-                    <div class="portfolio-img">
-                        <img src="assets/images/portfolio_landing.png" alt="Landing Page Modern"
-                            onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Landing+Page+Mockup'">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Corporate Landing Page</h3>
-                        <p>Website profil perusahaan dengan desain elegan dan animasi interaktif.</p>
-                        <span class="badge">Website</span>
-                    </div>
-                </div>
+                </a>
             </div>
 
             <div class="portfolio-cta text-center">
-                <p>Punya ide lain? Segera konsultasikan dengan kami.</p>
+                <p data-i18n="port_cta_text">Punya ide lain? Segera konsultasikan dengan kami.</p>
                 <a href="https://wa.me/6285694488510?text=Halo%20NETKOM%20Dev,%20saya%20tertarik%20dengan%20portofolio%20anda"
-                    class="btn btn-primary">Pesan Aplikasi Sekarang</a>
+                    class="btn btn-primary" data-i18n="port_cta_btn">Pesan Aplikasi Sekarang</a>
             </div>
         </div>
     </section>
@@ -251,11 +321,12 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h2>NETKOM <span>DEV</span></h2>
-                    <p>Partner Digital Terbaik Anda. Menghadirkan solusi teknologi yang tepat guna, efisien, dan
+                    <p data-i18n="footer_desc">Partner Digital Terbaik Anda. Menghadirkan solusi teknologi yang tepat
+                        guna, efisien, dan
                         menguntungkan.</p>
                 </div>
                 <div class="footer-socials">
-                    <h3>Ikuti Kami</h3>
+                    <h3 data-i18n="footer_follow">Ikuti Kami</h3>
                     <div class="social-links">
                         <a href="https://wa.me/6285694488510" aria-label="WhatsApp" target="_blank"><i
                                 class="fab fa-whatsapp"></i></a>
@@ -274,7 +345,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 NETKOM Dev. All Rights Reserved.</p>
+                <p data-i18n="footer_copy">&copy; 2026 NETKOM Dev. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -325,7 +396,17 @@
     }
     </script>
 
-    <script src="js/main.js"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PJ0FPMRKF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-1PJ0FPMRKF');
+    </script>
+
+    <script src="js/i18n.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
