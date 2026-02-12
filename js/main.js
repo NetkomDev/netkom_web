@@ -43,21 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Select elements to animate
-    const animatedElements = document.querySelectorAll('.animate-up, .feature-card, .service-item, .portfolio-card, .section-header');
+    const animatedElements = document.querySelectorAll('.animate-up, .feature-card, .service-item, .section-header');
 
     animatedElements.forEach((el, index) => {
         // Add base class if not present
         if (!el.classList.contains('animate-up') &&
             !el.classList.contains('feature-card') &&
-            !el.classList.contains('service-item') &&
-            !el.classList.contains('portfolio-card')) {
+            !el.classList.contains('service-item')) {
             el.classList.add('reveal');
         } else {
             el.classList.add('reveal');
         }
 
         // Add staggering delays for grids
-        if (el.classList.contains('feature-card') || el.classList.contains('service-item') || el.classList.contains('portfolio-card')) {
+        if (el.classList.contains('feature-card') || el.classList.contains('service-item')) {
             // Calculate index within parent to stagger
             const parent = el.parentElement;
             const siblings = Array.from(parent.children);
@@ -100,4 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const statsSection = document.querySelector('.stats-section');
     if (statsSection) statsObserver.observe(statsSection);
+
+    // Portfolio Auto Slider Logic
+    const portfolioTrack = document.querySelector('.portfolio-track');
+    if (portfolioTrack) {
+        // Clone items for infinite loop
+        const items = Array.from(portfolioTrack.children);
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true'); // Accessibility
+            portfolioTrack.appendChild(clone);
+        });
+
+        // Pause animation on hover is handled via CSS
+    }
 });
