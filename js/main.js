@@ -101,19 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statsSection) statsObserver.observe(statsSection);
 
     // Portfolio Auto Slider Logic
+    const portfolioSlider = document.querySelector('.portfolio-slider');
     const portfolioTrack = document.querySelector('.portfolio-track');
-    if (portfolioTrack) {
-        // Clone items for infinite loop
+
+    if (portfolioSlider && portfolioTrack) {
+        // Clone items for infinite loop (double content to ensure smooth scroll)
         const items = Array.from(portfolioTrack.children);
         items.forEach(item => {
             const clone = item.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true'); // Accessibility
+            clone.setAttribute('aria-hidden', 'true');
             portfolioTrack.appendChild(clone);
         });
 
-        // Pause animation on hover is handled via CSS
-
-        // Credentials Toggle Logic
+        // Credentials Toggle Logic (Event Delegation)
+        // Note: We attach listener to track, but clicks bubble up from cloned items too
         portfolioTrack.addEventListener('click', (e) => {
             const toggleBtn = e.target.closest('.toggle-credentials');
             if (toggleBtn) {
@@ -131,6 +132,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     icon.style.marginRight = '6px';
                 }
             }
+        });
+
+        // Auto Scroll Logic
+        let scrollAmount = 0;
+        const speed = 0.5; // Adjustable speed
+        let isPaused = false;
+        let animationId;
+
+        function autoScroll() {
+            if (!isPaused) {
+                scrollAmount += speed;
+                // If scrolled past half (the original content width), reset to 0
+                if (scrollAmount >= portfolioTrack.scrollWidth / 2) {
+                    scrollAmount = 0;
+                    portfolioSlider.scrollLeft = 0;
+                }
+                portfolioSlider.scrollLeft = scrollAmount;
+            } else {
+                // If paused (manual interaction), sync scrollAmount with actual scrollLeft
+                // This prevents jumping when resuming
+                scrollAmount = portfolioSlider.scrollLeft;
+            }
+            animationId = requestAnimationFrame(autoScroll);
+        }
+
+        // Start animation
+        animationId = requestAnimationFrame(autoScroll);
+
+        // Pause on interaction
+        portfolioSlider.addEventListener('mouseenter', () => isPaused = true);
+        portfolioSlider.addEventListener('mouseleave', () => isPaused = false);
+        portfolioSlider.addEventListener('touchstart', () => isPaused = true, { passive: true });
+        portfolioSlider.addEventListener('touchend', () => {
+            // Optional: resume after a delay or immediately
+            setTimeout(() => isPaused = false, 1000);
         });
     }
 });

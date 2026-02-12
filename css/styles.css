@@ -439,27 +439,51 @@ h6 {
 /* Portfolio Slider */
 .portfolio-slider {
     width: 100%;
-    overflow: hidden;
+    overflow-x: auto;
+    /* Enable manual scroll */
+    overflow-y: hidden;
     position: relative;
     margin-bottom: 60px;
     padding: 20px 0;
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    cursor: grab;
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.portfolio-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.portfolio-slider:active {
+    cursor: grabbing;
 }
 
 .portfolio-track {
     display: flex;
-    width: max-content;
+    width: fit-content;
+    /* Allow content to dictate width */
     gap: 30px;
     padding-left: 30px;
-    /* Initial offset */
-    animation: scroll 40s linear infinite;
+    /* remove animation */
+    /* animation: scroll 40s linear infinite; */
 }
 
+/* Remove hover pause logic as it will be handled by JS */
+/*
 .portfolio-track:hover {
     animation-play-state: paused;
 }
+*/
 
+/* Remove keyframes */
+/*
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -469,6 +493,7 @@ h6 {
         transform: translateX(-50%);
     }
 }
+*/
 
 .portfolio-card {
     width: 300px;
