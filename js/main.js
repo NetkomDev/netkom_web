@@ -105,8 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioTrack = document.querySelector('.portfolio-track');
 
     if (portfolioSlider && portfolioTrack) {
-        // Clone items for infinite loop (double content to ensure smooth scroll)
+        // Clone items for infinite loop
+        // We need enough clones to cover the screen width + some extra
         const items = Array.from(portfolioTrack.children);
+        const originalCount = items.length;
+
+        // Clone sets to ensure smooth scrolling
         items.forEach(item => {
             const clone = item.cloneNode(true);
             clone.setAttribute('aria-hidden', 'true');
@@ -114,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Credentials Toggle Logic (Event Delegation)
-        // Note: We attach listener to track, but clicks bubble up from cloned items too
         portfolioTrack.addEventListener('click', (e) => {
             const toggleBtn = e.target.closest('.toggle-credentials');
             if (toggleBtn) {
@@ -136,22 +139,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Auto Scroll Logic
         let scrollAmount = 0;
-        const speed = 0.5; // Adjustable speed
+        const speed = 0.5; // Smooth slow speed
         let isPaused = false;
         let animationId;
+
+        // Calculate single set width dynamically
+        function getSingleSetWidth() {
+            const firstCard = portfolioTrack.children[0];
+            const gap = 30; // Defined in CSS
+            // Use offsetWidth which includes padding/border
+            const cardWidth = firstCard.offsetWidth;
+            return (cardWidth + gap) * originalCount;
+        }
 
         function autoScroll() {
             if (!isPaused) {
                 scrollAmount += speed;
-                // If scrolled past half (the original content width), reset to 0
-                if (scrollAmount >= portfolioTrack.scrollWidth / 2) {
+                const singleSetWidth = getSingleSetWidth();
+
+                // Infinite Loop Logic:
+                // If we've scrolled past the first set, reset to 0 (seamlessly)
+                if (scrollAmount >= singleSetWidth) {
                     scrollAmount = 0;
-                    portfolioSlider.scrollLeft = 0;
+                    // Force reset scrollLeft to 0 to align perfectly
                 }
+
                 portfolioSlider.scrollLeft = scrollAmount;
             } else {
                 // If paused (manual interaction), sync scrollAmount with actual scrollLeft
-                // This prevents jumping when resuming
                 scrollAmount = portfolioSlider.scrollLeft;
             }
             animationId = requestAnimationFrame(autoScroll);
@@ -165,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioSlider.addEventListener('mouseleave', () => isPaused = false);
         portfolioSlider.addEventListener('touchstart', () => isPaused = true, { passive: true });
         portfolioSlider.addEventListener('touchend', () => {
-            // Optional: resume after a delay or immediately
             setTimeout(() => isPaused = false, 1000);
         });
     }
