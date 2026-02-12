@@ -44,7 +44,8 @@ const translations = {
         port_subtitle: 'Bukti Nyata Kualitas Kami',
         port_beresin_desc: 'Aplikasi jasa panggil rumahan terpercaya. Servis AC, kebersihan, dan tukang harian langsung dari genggaman Anda.',
         port_umkmid_desc: 'Aplikasi manajemen bisnis UMKM lengkap dengan pencatatan penjualan, pelacakan keuntungan, dan analisis bisnis real-time.',
-        port_sigap_desc: 'Sistem pelaporan dan keamanan sekolah berbasis web. Dashboard admin, peta insiden, dan manajemen laporan terintegrasi.',
+        port_pupuk_desc: 'Marketplace pertanian modern. Temukan berbagai jenis pupuk berkualitas dari supplier terpercaya untuk hasil panen maksimal.',
+        port_sigap_desc: 'Sistem pelaporan dan keamanan sekolah berbasis web. Dashboard admin, incident map, dan manajemen laporan terintegrasi.',
         port_cta_text: 'Punya ide lain? Segera konsultasikan dengan kami.',
         port_cta_btn: 'Pesan Aplikasi Sekarang',
 
@@ -100,6 +101,7 @@ const translations = {
         port_subtitle: 'Real Proof of Our Quality',
         port_beresin_desc: 'Trusted home service booking app. AC repair, cleaning, and daily handyman services at your fingertips.',
         port_umkmid_desc: 'Complete small business management app with sales recording, profit tracking, and real-time analytics.',
+        port_pupuk_desc: 'Modern agricultural marketplace. Find high-quality fertilizers from trusted suppliers for maximum harvest yields.',
         port_sigap_desc: 'Web-based school safety and reporting system. Admin dashboard, incident map, and integrated report management.',
         port_cta_text: 'Have another idea? Consult with us today.',
         port_cta_btn: 'Order App Now',
