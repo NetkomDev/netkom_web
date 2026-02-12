@@ -112,5 +112,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Pause animation on hover is handled via CSS
+
+        // Credentials Toggle Logic
+        portfolioTrack.addEventListener('click', (e) => {
+            const toggleBtn = e.target.closest('.toggle-credentials');
+            if (toggleBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const content = toggleBtn.nextElementSibling;
+                const isHidden = window.getComputedStyle(content).display === 'none';
+
+                content.style.display = isHidden ? 'block' : 'none';
+
+                const icon = toggleBtn.querySelector('i');
+                if (icon) {
+                    icon.className = isHidden ? 'fas fa-unlock' : 'fas fa-key';
+                    icon.style.marginRight = '6px';
+                }
+            }
+        });
     }
 });

@@ -491,7 +491,7 @@ h6 {
 }
 
 .portfolio-img {
-    height: 180px;
+    height: 150px;
     overflow: hidden;
     position: relative;
 }
@@ -508,7 +508,7 @@ h6 {
 }
 
 .portfolio-info {
-    padding: 20px;
+    padding: 16px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -526,6 +526,52 @@ h6 {
     font-size: 0.85rem;
     line-height: 1.5;
     flex-grow: 1;
+}
+
+.credentials-wrapper {
+    margin: 10px 0;
+}
+
+.toggle-credentials {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-credentials:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.credentials-content {
+    margin-top: 8px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .badge {
