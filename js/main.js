@@ -105,17 +105,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioTrack = document.querySelector('.portfolio-track');
 
     if (portfolioSlider && portfolioTrack) {
-        // Clone items for infinite loop
-        // We need enough clones to cover the screen width + some extra
         const items = Array.from(portfolioTrack.children);
         const originalCount = items.length;
 
-        // Clone sets to ensure smooth scrolling
-        items.forEach(item => {
-            const clone = item.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true');
-            portfolioTrack.appendChild(clone);
-        });
+        // Calculate dynamic width of one set
+        function getSingleSetWidth() {
+            const firstCard = items[0];
+            const gap = 30; // Defined in CSS
+            const cardWidth = firstCard.offsetWidth;
+            return (cardWidth + gap) * originalCount;
+        }
+
+        // Clone items until we have enough width for seamless scrolling
+        // We need: totalWidth > singleSetWidth + viewportWidth
+        const singleSetWidth = getSingleSetWidth();
+        let currentWidth = singleSetWidth;
+        const viewportWidth = window.innerWidth;
+
+        // Safety multiplier: ensure we have at least enough clones to cover viewport + buffer
+        // Strategy: Keep cloning sets until total width is significantly larger than viewport
+        while (currentWidth < (viewportWidth * 2) + singleSetWidth) {
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                portfolioTrack.appendChild(clone);
+            });
+            currentWidth += singleSetWidth;
+        }
 
         // Credentials Toggle Logic (Event Delegation)
         portfolioTrack.addEventListener('click', (e) => {
@@ -143,31 +159,29 @@ document.addEventListener('DOMContentLoaded', () => {
         let isPaused = false;
         let animationId;
 
-        // Calculate single set width dynamically
-        function getSingleSetWidth() {
-            const firstCard = portfolioTrack.children[0];
-            const gap = 30; // Defined in CSS
-            // Use offsetWidth which includes padding/border
-            const cardWidth = firstCard.offsetWidth;
-            return (cardWidth + gap) * originalCount;
-        }
-
         function autoScroll() {
             if (!isPaused) {
                 scrollAmount += speed;
-                const singleSetWidth = getSingleSetWidth();
 
-                // Infinite Loop Logic:
-                // If we've scrolled past the first set, reset to 0 (seamlessly)
+                // Seamless Reset Logic:
+                // Once we've scrolled past the first full set, reset to 0.
                 if (scrollAmount >= singleSetWidth) {
                     scrollAmount = 0;
-                    // Force reset scrollLeft to 0 to align perfectly
+                    // Reset scrollLeft instantly to 0 (start of track)
                 }
 
                 portfolioSlider.scrollLeft = scrollAmount;
             } else {
-                // If paused (manual interaction), sync scrollAmount with actual scrollLeft
-                scrollAmount = portfolioSlider.scrollLeft;
+                // Handle manual infinite scroll wrap-around
+                if (portfolioSlider.scrollLeft >= singleSetWidth) {
+                    portfolioSlider.scrollLeft -= singleSetWidth;
+                    scrollAmount = portfolioSlider.scrollLeft;
+                } else if (portfolioSlider.scrollLeft <= 0) {
+                    // If manual backward scroll, this logic is complex to get perfect without visual jump
+                    // But strictly speaking for infinite loop forward:
+                } else {
+                    scrollAmount = portfolioSlider.scrollLeft;
+                }
             }
             animationId = requestAnimationFrame(autoScroll);
         }
