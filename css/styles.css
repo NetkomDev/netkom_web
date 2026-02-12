@@ -576,14 +576,30 @@ h6 {
 
 .badge {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 6px 14px;
     background: rgba(59, 130, 246, 0.15);
     color: #60a5fa;
-    border-radius: 20px;
+    border-radius: 8px;
+    /* Changed from 20px to match other UI */
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     border: 1px solid rgba(59, 130, 246, 0.2);
+    margin-top: 8px;
+    /* Add spacing */
+    width: 100%;
+    /* Make full width for button look */
+    text-align: center;
+}
+
+.portfolio-info .badge:not(:last-child) {
+    margin-bottom: 0;
+    /* Handled by margin-top of next sibling or just standard flow */
+}
+
+/* Ensure credentials wrapper also has spacing */
+.credentials-wrapper {
+    margin: 10px 0 2px 0;
 }
 
 /* Footer */
