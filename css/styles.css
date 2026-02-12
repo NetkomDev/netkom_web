@@ -599,6 +599,10 @@ h6 {
     }
 }
 
+.portfolio-cta .btn {
+    margin-top: 2rem;
+}
+
 .badge {
     display: inline-block;
     padding: 6px 14px;
